@@ -13,7 +13,7 @@ Python干了两件事：
 2、在内存中创建了一个名为 a 的变量，并把它指向 'ABC'。
 
 而如果是如下代码，那么变量 b 的内容是什么？
-```
+```Python
 a = 'ABC'
 b = a
 a = 'XYZ'
@@ -32,13 +32,13 @@ a = 'XYZ'，此时将变量 a 重新指向 'XYZ' ，而变量 b 仍然指向原�
 可变长编码，将一个Unicode字符根据不同的数字大小编码城1-6个字节。
 常用英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符编码成4-6个字节。
 
-```
+```Python
 encode('utf-8')
 encode('ascii')
 ```
 将 str 字符串(unicode)编码成 utf-8/ascii 字节
 
-```
+```Python
 decode('utf-8')
 decode('ascii')
 ```
@@ -47,13 +47,13 @@ decode('ascii')
 
 ## 格式化
 2种格式化方式：
-```
+```Python
 'Hi, %s, you are a good %s!' % ('Nizo2010', 'boy')
 #输出为'Hi, Nizo2010, you are a good boy!'
 ```
 
 format：
-```
+```Python
 'Hello, {0}, you have {1:.2f}m tall.'.format('Nizo2010', 1.785)
 #输出为'Hello, Nizo2010, you have 1.78m tall.'
 ```
