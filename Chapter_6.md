@@ -65,3 +65,17 @@ def calc(*numbers):
 14
 >>> calc(*num)    # *num表示把num这个list的所有元素作为可变参数传递进去
 14
+```
+
+```Python
+def person(name, age, **kw):
+    print('name:', name, 'age:', age, 'other': kw) 
+    
+>>> extra = {'city': 'Beijing', 'job': 'Engineer'}
+>>> person('Jack', 24, city = extra['city'], jpb = extra['job']
+name: Jack  age: 24     other: {'city': 'Beijing', 'job:', 'Engineer'}
+>>> person('Jack', 24, **extra)     # **extra表示把extra这个dict的所有key-value用关键字参数传入到函数的 **kw参数
+name: Jack  age: 24     other: {'city': 'Beijing', 'job:', 'Engineer'}
+```
+
+（注意：** extra表示把 extra 这个 dict 的所有key-value用关键字传入到函数的 ** kw参数）
