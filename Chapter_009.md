@@ -1,9 +1,9 @@
 # 迭代
 
-1、只要是可迭代对象（list、tuple、dict和字符串等），都可以使用 for 循环来迭代
+## 只要是可迭代对象（list、tuple、dict和字符串等），都可以使用 for 循环来迭代
 
 
-2、默认情况下， dict迭代的是key
+## 默认情况下， dict迭代的是key
 ```Python
 for key in dict1:
     pass
@@ -22,7 +22,7 @@ for key, value in dict.items():
 ```
 
 
-3、判断对象是否可迭代
+## 判断对象是否可迭代
 ```python
 >>>from collections import Iterable
 
@@ -30,7 +30,7 @@ for key, value in dict.items():
 True
 ```
 
-4、对list、tuple实现下标循环
+## 对list、tuple实现下标循环
 ```python
 for i, value in enumerate(['A', 'B', 'C']):
     print(i, ":", value)
