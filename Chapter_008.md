@@ -1,4 +1,4 @@
-# Chapter 切片
+# Chapter_008 切片
 
 trim() 函数，不调用 str 的 strip() 函数，实现去掉 str 的首尾空格：
 ```Python
