@@ -1,4 +1,4 @@
-# 列表生成式
+# Chapter_010   列表生成式
 
 ```python
 L = [function(n) for n in iter if condition(n)
