@@ -78,4 +78,83 @@ name: Jack  age: 24     other: {'city': 'Beijing', 'job:', 'Engineer'}
 name: Jack  age: 24     other: {'city': 'Beijing', 'job:', 'Engineer'}
 ```
 
-（注意：** extra表示把 extra 这个 dict 的所有key-value用关键字传入到函数的 ** kw参数）
+（注意：
+\*\*extra表示把 extra 这个 dict 的所有key-value用关键字传入到函数的 \*\*kw参数
+kw获得的 dict 是 extra 的一份拷贝，对 kw 的改动不会影响到函数外的 extra
+）
+
+
+## 命名关键字参数
+
+限制关键字参数的名字，与关键字参数 \*\*kw 不同，命名关键字参数只需要一个特殊的分隔符\*，\*后面的参数，被视为命名关键字参数。
+
+```Python
+def person(name, age, *, city, job):
+    print(name, age, city, job)
+    
+>>> person('nizo', 24, 123456, city = 'Shanghai', job = 'Engineer')
+Traceback (most recent call last):
+...
+TypeError: person() takes 2 positional arguments but 3 positional arguments ( and 2 keyword-only arguments) were given
+>>> person('nizo', 24, city = 'Shanghai', job = 'Engineer')
+nizo 24 Shanghai Engineer
+```
+
+如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不需要\*隔离了。
+```Python
+def person(name, age, *args, city, job):
+    print(name, age, args, city, job)
+    
+>>> person('nizo', 24, 'Shanghai', 'Engineer')
+Traceback (most recent call last):
+...
+TypeError: person() missing 2 required keyword-only arguments: 'city' and 'job'
+>>> person('nizo', 24, city = 'Shanghai', job = 'Engineer')
+nizo 24 () Shanghai Engineer
+>>> person('nizo', 24, 'Chinese', 'male', city = 'Shanghai', job = 'Engineer')
+nizo 24 ('Chinese, 'male') Shanghai Engineer
+```
+
+命名关键字参数也可以有缺省值：
+```Python
+def person(name, age, *, city = 'Shanghai', job):
+    print(name, age, city, job)
+    
+>>> person('nizo', 24, job = 'Engineer')
+nizo 24 Shanghai Engineer
+```
+
+
+## 参数组合
+
+参数定义的顺序：
+必选参数 ---> 默认参数 ---> 可变参数 ---> 命名关键字参数 ---> 关键字参数
+
+```Python
+def f1(a, b, c = 0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+    
+def f2(a, b, c = 0, *, d, ** kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+    
+>>> f1(1, 2)
+a = 1 b = 2 c = 0 args = () kw = {}
+>>> f1(1, 2, c = 3)
+a = 1 b = 2 c = 3 args = () kw = {}
+>>> f1(1, 2, 3, 'a', 'b')
+a = 1 b = 2 c = 3 args = ('a', 'b') kw = {}
+>>> f1(1, 2, 3, 'a', 'b', x = 99)
+a = 1 b = 2 c = 3 args = ('a', 'b') kw = {'x': 99}
+>>> f2(1, 2, d = 99, ext = None)
+a = 1 b = 2 c = 0 d = 99 kw = {'ext': None}
+
+>>> args = (1, 2, 3, 4)
+>>> kw = { 'd': 99, 'x': '#'}
+>>> f1(*args, **kw)
+a = 1 b = 2 c = 3, args = {4,} kw = {'d': 99, 'x': '#'}
+
+>>> args = (1, 2, 3)
+>>> kw = {'d': 88, 'x': '#'}
+>>> f2(*args, **kw)
+a = 1 b = 2 d = 3 d = 88 kw = {'x': '#'}
+```
