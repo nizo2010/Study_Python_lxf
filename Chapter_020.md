@@ -224,7 +224,7 @@ def fast(x, y):
     
 @metric
 def slow(x, y, z):
-    time.sleep(0.1234_
+    time.sleep(0.1234)
     return x * y * z
     
 if __name__ == '__main__':
