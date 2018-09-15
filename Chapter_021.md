@@ -30,6 +30,8 @@ int2 = functools.partial(int, base = 2)
 
 ## 创建偏函数，实际可以接收函数对象、 \*args、 \*\*kw 三个参数
 
+1）比如下面的这个函数：
+
 ```python
 int2 = functools.partial(int, base = 2)
 ```
@@ -40,6 +42,8 @@ int2 = functools.partial(int, base = 2)
 kw = {'base': 2}
 int('10010' **kw)
 ```
+
+2）再比如，下面这个函数：
 
 ```python
 max2 = functools.partial(max, 10)
