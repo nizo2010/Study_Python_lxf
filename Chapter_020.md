@@ -135,3 +135,61 @@ Sat Sep 15 17:00:21 2018
 ```
 
 只需要在定义 wrapper() 的前面加上 @functools.wraps(func) 即可。
+
+
+
+
+## 参考
+
+如果不使用 functools.wraps
+
+```python
+def logged(func):
+    def with_logging(*args, **kwargs):
+        print(func.__name__, "was called")
+        return func(*args, **kwargs)
+    return with_logging
+    
+@logged
+def f(x):
+    print(x*x)
+    
+>>> f(5)
+f was called
+25
+>>> f = logged(f)
+>>> f.__name__
+'with_logging'
+>>> f(5)
+with_logging was called
+f was called
+25
+```
+
+而 functools.wraps 则可以将原函数对象的指定属性复制给包装函数对象，属性包括 \_\_module\_\_ ， \_\_name\_\_ ， \_\_doc\_\_ 等。
+
+```python
+import functools
+
+def logged(func):
+    @functools.wraps(func)
+    def with_logging(*args, **kwargs):
+        print(func.__name__, "was called")
+        return func(*args, **kwargs)
+    return with_logging
+    
+@logged
+def f(x):
+    print(x*x)
+    
+>>> f(5)
+f was called
+25
+>>> f = logged(f)
+>>> f.__name__
+'f'
+>>> f(5)
+f was called
+f was called
+25
+```
