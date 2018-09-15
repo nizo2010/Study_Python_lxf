@@ -145,25 +145,27 @@ Sat Sep 15 17:00:21 2018
 
 ```python
 def logged(func):
-    def with_logging(*args, **kwargs):
-        print(func.__name__, "was called")
-        return func(*args, **kwargs)
-    return with_logging
-    
+	def with_logging(*args, **kwargs):
+		"""do something"""
+		print(func.__name__, "was called")
+		return func(*args, **kwargs)
+	return with_logging
+	
 @logged
 def f(x):
-    print(x*x)
-    
->>> f(5)
-f was called
-25
->>> f = logged(f)
->>> f.__name__
-'with_logging'
->>> f(5)
-with_logging was called
-f was called
-25
+	"""do some math"""
+	print(x * x)
+	
+if __name__ == '__main__':
+	g = logged(f)
+	print(g.__name__)
+	print(g.__doc__)
+
+###
+# 返回结果为
+with_logging
+do something
+
 ```
 
 而 functools.wraps 则可以将原函数对象的指定属性复制给包装函数对象，属性包括 \_\_module\_\_ ， \_\_name\_\_ ， \_\_doc\_\_ 等。
@@ -172,24 +174,69 @@ f was called
 import functools
 
 def logged(func):
-    @functools.wraps(func)
-    def with_logging(*args, **kwargs):
-        print(func.__name__, "was called")
-        return func(*args, **kwargs)
-    return with_logging
-    
+	@functools.wraps(func)
+	def with_logging(*args, **kwargs):
+		"""do something"""
+		print(func.__name__, "was called")
+		return func(*args, **kwargs)
+	return with_logging
+	
 @logged
 def f(x):
-    print(x*x)
+	"""do some math"""
+	print(x * x)
+	
+if __name__ == '__main__':
+	g = logged(f)
+	print(g.__name__)
+	print(g.__doc__)
+	
+###
+# 返回结果为
+f
+do some math
+
+```
+
+
+## 课后作业
+
+设计一个decorator，它作用于任何函数上，并打印该函数的执行时间
+
+```python
+import functools, time
+
+def metric(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()        # 函数运行前的时间戳
+        ret = func(*args, **kwargs)     # 执行函数，得到返回值赋值给ret
+        end_time = time.time()          # 函数运行后的时间戳
+        ntime = str(end_time - start_time)      # 计算执行函数运行的时间
+        print('%s executed in %s ms...' % (func.__name__, ntime))
+        return ret
+    return wrapper
     
->>> f(5)
-f was called
-25
->>> f = logged(f)
->>> f.__name__
-'f'
->>> f(5)
-f was called
-f was called
-25
+@metric
+def fast(x, y):
+    time.sleep(0.0012)
+    return x + y
+    
+@metric
+def slow(x, y, z):
+    time.sleep(0.1234_
+    return x * y * z
+    
+if __name__ == '__main__':
+    f = fast
+    s = slow
+    print(f(10, 10))
+    print(s(10, 10, 10))
+    
+###
+# 返回结果
+fast executed in 0.0029299259185791016 ms...
+20
+slow executed in 0.12402820587158203 ms...
+1000
 ```
