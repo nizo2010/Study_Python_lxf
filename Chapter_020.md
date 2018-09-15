@@ -7,6 +7,7 @@
 
 ```python
 import time
+
 def now():
     print(time.asctime(time.localtime(time.time())))
     
@@ -34,3 +35,25 @@ def log(func):
         return func(*args, **kw)
     return warpper
 ```      
+
+上面的 log() 函数就是一个decorator，接收一个函数 func 作为参数，并返回一个函数 wrapper ，借助Python的 @ 语法，将decorator置于函数的定义处：
+
+```python
+import time
+
+@log
+def now():
+    print(time.asctime(time.localtime(time.time())))
+    
+>>> now()       # 调用 now() ，不仅会运行 now() 函数本身，还会在运行前打印日志
+call now():
+Sat Sep 15 16:24:17 2018
+```
+
+将 @ 置于 now() 函数的定义处，相当于执行了语句
+```python
+now = log(now)
+```
+
+由于 log() 是一个decorator，返回一个函数，所以原来的 now() 函数依然存在，只是现在同名的 now 变量指向了新的函数，于是调用 now() 将执行新函数，即在 log() 函数中返回的 wrapper() 函数，wrapper() 函数的参数定位 (\*args, \*\*kw)，则 wrapper() 函数可以接收任意参数的调用，在 wrapper() 函数内，首先打印日志，再紧接着调用原始函数。
+
