@@ -51,9 +51,87 @@ Sat Sep 15 16:24:17 2018
 ```
 
 将 @ 置于 now() 函数的定义处，相当于执行了语句
+
 ```python
 now = log(now)
 ```
 
 由于 log() 是一个decorator，返回一个函数，所以原来的 now() 函数依然存在，只是现在同名的 now 变量指向了新的函数，于是调用 now() 将执行新函数，即在 log() 函数中返回的 wrapper() 函数，wrapper() 函数的参数定位 (\*args, \*\*kw)，则 wrapper() 函数可以接收任意参数的调用，在 wrapper() 函数内，首先打印日志，再紧接着调用原始函数。
 
+若decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数
+
+```python
+import time
+
+def log(text):
+    def decorator(func):
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+    
+@log('execute')
+def now():
+    print(time.asctime(time.localtime(time.time())))
+    
+>>> now()
+execute now():
+Sat Sep 15 16:30:19 2018
+```
+
+和2层嵌套的decorator相比，3层嵌套的效果是：
+
+```python
+now = log('execute')(now)
+```
+
+首先执行 log('execute') ，返回的是 decorator 函数，再调用返回的 decorator 函数，参数是 now 函数，返回值最终是 wrapper 函数。因此 now 变量最终指向 wrapper() 函数，所以它的 \_\_name\_\_ 属性从原来的'now'变成了'wrapper'。那么需要把原始函数的 \_\_name\_\_ 等属性复制到 wrapper() 函数中，否则某些依赖函数签名的代码执行就会出错。
+
+但是，一定不要编写 wrapper.\_\_name\_\_ = func.\_\_name\_\_ 这样的代码，因为Python内置的 functools.wraps 就是做这个工作的。
+
+上述2个例子完整的decorator代码：
+
+```python
+import time, functools
+
+def log(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return func(*args, **kw)
+    return warpper
+    
+@log
+def now():
+    print(time.asctime(time.localtime(time.time())))
+
+>>> now()
+call now():
+Sat Sep 15 16:51:42 2018
+```
+
+或者针对带参数的decorator：
+
+```python
+import functools
+
+def log(text):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+
+@log('execute')
+def now():
+    print(time.asctime(time.localtime(time.time())))
+    
+>>> now()
+execute now():
+Sat Sep 15 17:00:21 2018
+```
+
+只需要在定义 wrapper() 的前面加上 @functools.wraps(func) 即可。
