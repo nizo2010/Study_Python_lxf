@@ -1,4 +1,4 @@
-# Chapter_031   使用“\_\_slot\_\_”
+# Chapter_031   使用“\_\_slots\_\_”
 
 ## 给实例绑定属性和方法
 
@@ -58,30 +58,32 @@ Student.set_score = set_score
 
 假设需要限制实例的属性，比如只允许对Student实例添加name和age属性。
 
-只需要在定义class的时候，定义一个\_\_slot\_\_变量，来限制该class实例能添加的属性。
+只需要在定义class的时候，定义一个\_\_slots\_\_变量，来限制该class实例能添加的属性。
 
 ```python
 class Student(object):
-    __slot__ = ('name, 'age')
+    __slots__ = ('name, 'age')
     
 >>> s = Student()
 >>> s.name = 'nizo'       # 给实例s绑定name属性
 >>> s.age = 18            # 给实例s绑定age属性
 >>> s.score = 100
-# 报错
+Traceback (most recent call last):
+...
+AttributeError: 'Student' object has no attribute 'score'
 ````
 
 > **注意：**
 >
-> 使用\_\_slot\_\_时，只对当前类实例起作用，对继承的子类不起作用
+> 使用\_\_slots\_\_时，只对当前类实例起作用，对继承的子类不起作用
 
 
 ```python
 class HighSchoolStudent(Student):
     pass
     
-h = HighSchoolStudent()
-h.score = 99
-h.score
-# 返回99
+>>> h = HighSchoolStudent()
+>>> h.score = 99
+>>>h.score
+99
 ```
