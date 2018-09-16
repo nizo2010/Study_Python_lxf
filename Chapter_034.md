@@ -9,7 +9,9 @@ class Student(object):
     pass
 
 >>> print(Student())
-<__main__.Student object at 0x1013dd828>
+<__main__.Student object at 0x1013ddb00>
+>>> Student()
+<__main__.Student object at 0x1013ddac8>
 
 class Student2(object):
     def __str__(self):
