@@ -158,3 +158,10 @@ a = 1 b = 2 c = 3, args = {4,} kw = {'d': 99, 'x': '#'}
 >>> f2(*args, **kw)
 a = 1 b = 2 d = 3 d = 88 kw = {'x': '#'}
 ```
+
+
+## 链接
+
+上一节 [Chapter_005 dict和set](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_005.md "Chapter_005 dict和set")
+
+下一节 [Chapter_007 递归函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_007.md "Chapter_007 递归函数")
