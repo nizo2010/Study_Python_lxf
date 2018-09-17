@@ -87,4 +87,4 @@ if __name__ == '__main__':
 
 上一节 [Chapter_029 获取对象信息](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_029.md "Chapter_029 获取对象信息")
 
-下一节 [Chapter_031 使用“__slots__”](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_031.md "Chapter_031 使用“__slots__”")
+下一节 [Chapter_031 使用“\_\_slots\_\_”](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_031.md "Chapter_031 使用“__slots__”")
