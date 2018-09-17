@@ -71,3 +71,10 @@ dir()，获得一个对象的所有属性和方法，以list形式返回
 返回对象 a 的属性 x 的值；若没有属性 x ，则返回指定值 'A'
 
 **注意：这里x既可以是属性，也可以是方法**
+
+
+## 链接
+
+上一节 [Chapter_028 继承和多态](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_028.md "Chapter_028 继承和多态")
+
+下一节 [Chapter_030 实例属性和类属性](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_030.md "Chapter_030 实例属性和类属性")
