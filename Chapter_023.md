@@ -73,3 +73,10 @@ def greeting(name):
 这也是一种非常有用的代码封装和抽象的方法，即
 
 > ***外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为pubilc***
+
+
+## 链接
+
+上一节 [Chapter_022 模块（Module）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_022.md "Chapter_022 模块（Module）")
+
+下一节 Chapter_024 安装第三方模块](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_024.md "Chapter_024 安装第三方模块")
