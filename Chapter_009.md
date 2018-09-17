@@ -69,3 +69,10 @@ def findMinAndMax(L):
 >>> print(findMinAndMax(L5))
 (1, 8)
 ```
+
+
+## 链接
+
+上一节 [Chapter_008 切片](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_008.md "Chapter_008 切片")
+
+下一节 [Chapter_010 列表生成式](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_010.md "Chapter_010 列表生成式")
