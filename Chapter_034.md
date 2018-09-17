@@ -248,22 +248,24 @@ class Chain(object):
 
 Chain().status.user.timeline.list
 
-1） Chain是类名，对它进行“()”运算，即调用\_\_init\_\_(self)生成一个实例c1，c1 = Chain(path = '')；
+> 1） Chain是类名，对它进行“()”运算，即调用\_\_init\_\_(self)生成一个实例c1，c1 = Chain(path = '')；
+> 
+> 2） 对c1进行“.”运算，增加一个status属性，即调用\_\_getattr\_\_(self, status)返回实例c2，c2 = Chain(path = '\status')；
+> 
+> 3） 以此类推，增加user属性、timeline属性、list属性，最终返回的实例c = Chain(path = '\status\user\timeline\list')；
+> 
+> 4） 最后进行“回车键”运算，调用\_\_repr\_\_(self)返回实例c.\_path，即'\status\user\timeline\list'。
 
-2） 对c1进行“.”运算，增加一个status属性，即调用\_\_getattr\_\_(self, status)返回实例c2，c2 = Chain(path = '\status')；
-
-3） 以此类推，增加user属性、timeline属性、list属性，最终返回的实例c = Chain(path = '\status\user\timeline\list')；
-
-4） 最后进行“回车键”运算，调用\_\_repr\_\_(self)返回实例c.\_path，即'\status\user\timeline\list'。
+---
 
 Chain().user('nizo').repos
 
-1） Chain是类名，对它进行“()”运算，调用\_\_init\_\_(self)生成一个实例c1，c1 = Chain(path = '')；
-
-2） 对c1进行“.”运算，增加一个user属性，调用\_\_getattr\_\_(self, user)返回实例c2，c2 = Chain(path = '\user')；
-
-3） 对c2进行“('nizo')”运算，调用\_\_call\_\_(self, 'nizo')返回c3，c3 = Chain(path = '\user\nizo')；
-
-4） 对c3进行“.”运算，增加一个repos属性，调用\_\_getattr\_\_(self, repos)返回实例c4，c4 = Chain(path = '\user\nizo\repos')；
-
-5） 最后对c4进行“回车”运算，调用\_\_repr\_\_(self)返回实例c4.\_path，即'\user\nizo\repos'。
+> 1） Chain是类名，对它进行“()”运算，调用\_\_init\_\_(self)生成一个实例c1，c1 = Chain(path = '')；
+> 
+> 2） 对c1进行“.”运算，增加一个user属性，调用\_\_getattr\_\_(self, user)返回实例c2，c2 = Chain(path = '\user')；
+> 
+> 3） 对c2进行“('nizo')”运算，调用\_\_call\_\_(self, 'nizo')返回c3，c3 = Chain(path = '\user\nizo')；
+> 
+> 4） 对c3进行“.”运算，增加一个repos属性，调用\_\_getattr\_\_(self, repos)返回实例c4，c4 = Chain(path = '\user\nizo\repos')；
+> 
+> 5） 最后对c4进行“回车”运算，调用\_\_repr\_\_(self)返回实例c4.\_path，即'\user\nizo\repos'。
