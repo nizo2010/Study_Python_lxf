@@ -81,3 +81,10 @@ if __name__ == '__main__':
 2、 类属性属于类所有，所有属性共享一个属性
 
 3、 不要对实例属性和类属性使用相同的名字，否则将产生难以发现的错误
+
+
+## 链接
+
+上一节 [Chapter_029 获取对象信息](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_029.md "Chapter_029 获取对象信息")
+
+下一节 [Chapter_031 使用“__slots__”](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_031.md "Chapter_031 使用“__slots__”")
