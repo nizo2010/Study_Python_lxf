@@ -116,6 +116,6 @@ Exception raised:
 
 ## 链接
 
-上一节 [Chapter_039 单元测试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_038.md "Chapter_039 单元测试")
+上一节 [Chapter_039 单元测试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_039.md "Chapter_039 单元测试")
 
 下一节 [Chapter_041 ](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_041.md "Chapter_041 ")
