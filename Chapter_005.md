@@ -32,6 +32,6 @@ s.pop()       #随机弹出一个元素
 
 ## 链接
 
-上一节 [Chapter_004 循环](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_005.md "Chapter_004 循环")
+上一节 [Chapter_004 循环](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_004.md "Chapter_004 循环")
 
-下一节 [Chapter_006 函数的参数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_005.md "Chapter_006 函数的参数")
+下一节 [Chapter_006 函数的参数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_006.md "Chapter_006 函数的参数")
