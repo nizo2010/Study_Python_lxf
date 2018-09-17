@@ -12,6 +12,6 @@
 
 ## 链接
 
-上一节 [Chapter_003 条件判断](https://github.com/nizo2010/Study_Python_lxf/edit/master/Chapter_003.md "Chapter_003 条件判断")
+上一节 [Chapter_003 条件判断](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_003.md "Chapter_003 条件判断")
 
-下一节 [Chapter_005 dict和set](https://github.com/nizo2010/Study_Python_lxf/edit/master/Chapter_005.md "Chapter_005 dict和set")
+下一节 [Chapter_005 dict和set](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_005.md "Chapter_005 dict和set")
