@@ -102,7 +102,8 @@ def bar(s):
     
 def main():
     bar('0')
-    
+
+main()
 ```
 
 我们在命令行运行该python程序
@@ -130,6 +131,49 @@ ZeroDivisionError: division by zero
 
 如果既想捕获错误，又想让错误堆栈打印出来（将可以可以分析错误原因），同时程序还能继续执行下去。===\> **这里使用Python内置的logging模块，可以记录错误信息**
 
-还是以上面的例子为例，只需要修改main()函数，并在程序开头导入模块语句 import logging
+还是以上面的例子为例，只需要修改main()函数，并在程序开头导入模块语句 import logging，编写新的python文件err_logging.py
 
 ```
+# err_logging.py
+import logging
+
+def foo(s):
+    return 10 / int(s)
+    
+def bar(s):
+    return foo(s) * 2
+    
+def main():
+    try:
+        bar('0')
+    except Exception as e:
+        logging.exception(e)
+
+main()
+print('END')
+```
+
+记下来测试一下代码
+
+```python
+$ python3 err_logging.py
+ERROR:root:division by zero
+Traceback (most recent call last):
+  File "name.py", line 11, in main
+    bar('0')
+  File "name.py", line 7, in bar
+    return foo(s) * 2
+  File "name.py", line 4, in foo
+    return 10 / int(s)
+ZeroDivisionError: division by zero
+END
+```
+
+
+## raise 语句
+
+raise 语句，抛出异常
+
+1、 raise语句不带参数，就会将当前捕获到的错误原样抛出
+
+2、 raise语句带一个Error，就会抛出指定的Error错误
