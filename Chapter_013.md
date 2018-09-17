@@ -12,6 +12,6 @@
 
 ## 链接
 
-上一节 [Chapter_012 迭代器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_011.md "Chapter_012 迭代器")
+上一节 [Chapter_012 迭代器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_012.md "Chapter_012 迭代器")
 
 下一节 [Chapter_014 高阶函数（High-order fuction）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_014.md "Chapter_014 高阶函数（High-order fuction）")
