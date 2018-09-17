@@ -50,3 +50,10 @@ def is_odd(n):
 
 ```
 
+
+
+## 链接
+
+上一节 [Chapter_018 返回函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_018.md "Chapter_018 返回函数")
+
+下一节 [Chapter_020 装饰器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_020.md "Chapter_020 装饰器")
