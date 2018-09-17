@@ -118,4 +118,4 @@ Exception raised:
 
 上一节 [Chapter_039 单元测试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_039.md "Chapter_039 单元测试")
 
-下一节 [Chapter_041 ](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_041.md "Chapter_041 ")
+下一节 [Chapter_041 文件读写](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_041.md "Chapter_041 文件读写")
