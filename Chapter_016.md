@@ -80,3 +80,10 @@ def is_palindrome(n):
 output = filter(is_palindrome, range(1,200))
 list(output)
 ```
+
+
+## 链接
+
+上一节 [Chapter_015 map/reduce](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_015.md "Chapter_015 map/reduce")
+
+下一节 [Chapter_017 sorted()](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_017.md "Chapter_017 sorted()")
