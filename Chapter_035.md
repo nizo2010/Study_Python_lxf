@@ -95,3 +95,10 @@ Gender.Male
 >>> print(bart.gender.value)
 0
 ```
+
+
+## 链接
+
+上一节 [Chapter_034 定制类](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_034.md "Chapter_034 定制类")
+
+下一节 [Chapter_036 使用元类](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_036.md "Chapter_036 使用元类")
