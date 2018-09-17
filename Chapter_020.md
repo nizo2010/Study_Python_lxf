@@ -240,3 +240,10 @@ fast executed in 0.0029299259185791016 ms...
 slow executed in 0.12402820587158203 ms...
 1000
 ```
+
+
+## 链接
+
+上一节 [Chapter_019 匿名函数 lambda函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_019.md "Chapter_019 匿名函数 lambda函数")
+
+下一节 [Chapter_021 偏函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_021.md "Chapter_021 偏函数")
