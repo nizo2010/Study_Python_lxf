@@ -14,3 +14,10 @@ def trim(s):
 >>> print('"' + trim('   Hello world!   ') + '"')
 "Hello world!"
 ```
+
+
+## 链接
+
+上一节 [Chapter_007 递归函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_007.md "Chapter_007 递归函数")
+
+下一节 [Chapter_009 迭代](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_009.md "Chapter_009 迭代")
