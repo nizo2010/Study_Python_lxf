@@ -21,3 +21,11 @@ abc.py 模块的名字是 mycompany.abc
 xyz.py 模块的名字是 mycompany.xyz
 
 \_\_init\_\_.py 本身是一个模块，它的模块名为 mycompany
+
+
+
+## 链接
+
+上一节 [Chapter_021 偏函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_021.md "Chapter_021 偏函数")
+
+下一节 [Chapter_023 使用模块](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_023.md "Chapter_023 使用模块")
