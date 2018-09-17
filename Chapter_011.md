@@ -104,3 +104,11 @@ def triangles():
 >>> next(t)
 [1, 4, 6, 4, 1]
 ```
+
+
+## 链接
+
+上一节 [Chapter_010 列表生成式](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_010.md "Chapter_010 列表生成式")
+
+下一节 [Chapter_012 迭代器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_012.md "Chapter_012 迭代器")
+
