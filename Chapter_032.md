@@ -90,3 +90,10 @@ class Student(object):
 ```
 
 上面的*birth*是**可读写**属性，而*age*就是一个**只读**属性。
+
+
+## 链接
+
+上一节 [Chapter_031 使用“\_\_slots\_\_”](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_031.md "Chapter_031 使用“__slots__”")
+
+下一节 [Chapter_033 多重继承](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_033.md "Chapter_033 多重继承")
