@@ -155,3 +155,10 @@ Traceback (most recent call last):
     print(10 / n)
 ZeroDivisionError: division by zero
 ```
+
+
+## 链接
+
+上一节 [Chapter_037 错误处理](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_037.md "Chapter_037 错误处理")
+
+下一节 [Chapter_039 单元测试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_039.md "Chapter_039 单元测试")
