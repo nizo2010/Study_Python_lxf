@@ -28,3 +28,10 @@ s.pop()       #随机弹出一个元素
 ```
 
 需要注意的是最后一个，为什么随机，因为**集合是无序的**，因此**字典也是无序的**。
+
+
+## 链接
+
+上一节 [Chapter_004 循环](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_005.md "Chapter_004 循环")
+
+下一节 [Chapter_006 函数的参数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_005.md "Chapter_006 函数的参数")
