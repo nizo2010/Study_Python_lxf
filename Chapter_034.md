@@ -269,3 +269,10 @@ Chain().user('nizo').repos
 > 4） 对c3进行“.”运算，增加一个repos属性，调用\_\_getattr\_\_(self, repos)返回实例c4，c4 = Chain(path = '\user\nizo\repos')；
 > 
 > 5） 最后对c4进行“回车”运算，调用\_\_repr\_\_(self)返回实例c4.\_path，即'\user\nizo\repos'。
+
+
+## 链接
+
+上一节 [Chapter_033 多重继承](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_033.md "Chapter_033 多重继承")
+
+下一节 [Chapter_035 使用枚举类](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_035.md "Chapter_035 使用枚举类")
