@@ -66,4 +66,4 @@ class Timer(object):
 
 上一节 [Chapter_027 访问限制](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_027.md "Chapter_027 访问限制")
 
-下一节 [Chapter_029 获取对象信](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_029.md "Chapter_029 获取对象信")
+下一节 [Chapter_029 获取对象信息](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_029.md "Chapter_029 获取对象信息")
