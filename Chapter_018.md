@@ -137,3 +137,10 @@ def createCounter():
 >> f2(), f2(), f2()
 (3, 4, 5)
 ```
+
+
+## 链接
+
+上一节 [Chapter_017 sorted()](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_017.md "Chapter_017 sorted()")
+
+下一节 [Chapter_019 匿名函数 lambda函数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_019.md "Chapter_019 匿名函数 lambda函数")
