@@ -40,3 +40,10 @@ Class是一种抽象概念，，比如定义的Student，是指的学生这个�
 而Instance则是一个个具体的Student，比如 Bart Simpson 和 Lisa Simpson 是两个具体的Student
 
 面向对象的思想是抽象出类Class，根据类创建出实例Instance
+
+
+## 链接
+
+上一节 [Chapter_024 安装第三方模块](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_024.md "Chapter_024 安装第三方模块")
+
+下一节 [Chapter_026 类和实例](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_026.md "Chapter_026 类和实例")
