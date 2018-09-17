@@ -112,3 +112,10 @@ def str2float(s):
 str2float('123.456')        # 返回123.456
 str2float('0.12345')        # 返回0.12345
 ```
+
+
+## 链接
+
+上一节 [Chapter_014 高阶函数（High-order fuction）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_014.md "Chapter_014 高阶函数（High-order fuction）")
+
+下一节 [Chapter_016 filter()](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_016.md "Chapter_016 filter()")
