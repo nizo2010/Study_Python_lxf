@@ -34,7 +34,7 @@ AssertionError: n is zero!
 这里assert的意思是：表达式 n != 0 应该是True，如果断言失败，assert抛出AssertionError，并带有assert语句后的描述字符串。
 
 
-## looging
+## logging
 
 还可以使用logging来代替print()，logging不会抛出错误，可以输出到文件
 
@@ -49,7 +49,7 @@ print(10 / n)
 运行结果为：
 WARNING:root:n = 0
 Traceback (most recent call last):
-  File "name.py", line 7, in <module>
+  File "err.py", line 7, in <module>
     print(10 / n)
 ZeroDivisionError: division by zero
 ```
@@ -69,7 +69,7 @@ print(10 / n)
 运行结果为：
 INFO:root:n = 0
 Traceback (most recent call last):
-  File "name.py", line 8, in <module>
+  File "err.py", line 8, in <module>
     print(10 / n)
 ZeroDivisionError: division by zero
 ```
@@ -151,7 +151,7 @@ ZeroDivisionError: division by zero
 -> print(10 / n)
 (Pdb) c
 Traceback (most recent call last):
-  File "name.py", line 6, in <module>
+  File "error.py", line 6, in <module>
     print(10 / n)
 ZeroDivisionError: division by zero
 ```
