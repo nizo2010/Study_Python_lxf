@@ -58,3 +58,7 @@ format：
 #输出为'Hello, Nizo2010, you have 1.78m tall.'
 ```
 
+
+## 链接
+
+下一节： [Chapter_002 list和tuple](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_002.md "Chapter_002 list和tuple")
