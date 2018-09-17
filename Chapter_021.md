@@ -61,3 +61,10 @@ max2(5, 6, 7)
 args = (5, 6, 7, 10)
 max(*args)
 ```
+
+
+## 链接
+
+上一节 [Chapter_020 装饰器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_020.md "Chapter_020 装饰器")
+
+下一节 [Chapter_022 模块（Module）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_022.md "Chapter_022 模块（Module）")
