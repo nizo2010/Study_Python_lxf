@@ -79,4 +79,4 @@ def greeting(name):
 
 上一节 [Chapter_022 模块（Module）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_022.md "Chapter_022 模块（Module）")
 
-下一节 Chapter_024 安装第三方模块](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_024.md "Chapter_024 安装第三方模块")
+下一节 [Chapter_024 安装第三方模块](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_024.md "Chapter_024 安装第三方模块")
