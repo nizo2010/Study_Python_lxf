@@ -97,4 +97,80 @@ OK
 
 ## setUp 与 tearDown
 
-两种特殊的setUP和tearDown方法，分别在每调用一个以test开头的测试方法前后分别指向（例如测试时需要启动一个数据库，可以在setUP()方法中连接数据库，tearDown(）
+两种特殊的setUP和tearDown方法，分别在每调用一个以test开头的测试方法前后分别指向（例如测试时需要启动一个数据库，可以在setUP()方法中连接数据库，tearDown(）方法中关闭数据库，此时就可以在每个测试方法中省略重复的代码）
+
+修改mydict_test.py代码：
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import unittest
+
+from mydict import Dict
+
+class TestDict(unittest.TestCase):
+
+	def setUp(self):
+		print('setUp...')
+		
+	def tearDown(self):
+		print('tearDown...')
+		
+	def test_init(self):
+		d = Dict(a=1, b='test')
+		self.assertEqual(d.a, 1)
+		self.assertEqual(d.b, 'test')
+		self.assertTrue(isinstance(d, dict))
+	
+	def test_key(self):
+		d = Dict()
+		d['key'] = 'value'
+		self.assertEqual(d.key, 'value')
+
+	def test_attr(self):
+		d = Dict()
+		d.key = 'value'
+		self.assertTrue('key' in d)
+		self.assertEqual(d['key'], 'value')
+
+	def test_keyerror(self):
+		d = Dict()
+		with self.assertRaises(KeyError):
+			value = d['empty']
+
+	def test_attrerror(self):
+		d = Dict()
+		with self.assertRaises(AttributeError):
+			value = d.empty
+
+if __name__ == '__main__':
+	unittest.main()
+```
+
+运行结果：
+
+```python
+setUp...
+tearDown...
+.setUp...
+tearDown...
+.setUp...
+tearDown...
+.setUp...
+tearDown...
+.setUp...
+tearDown...
+.
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK
+```
+
+
+## 链接
+
+上一节 [Chapter_038 调试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_038.md "Chapter_038 调试")
+
+下一节 [Chapter_040 文档测试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_039.md "Chapter_040 文档测试")
