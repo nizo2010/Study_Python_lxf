@@ -19,3 +19,10 @@ B ---> A
 B ---> C
 A ---> C
 ```
+
+
+## 链接
+
+上一节 [Chapter_006 函数的参数](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_006.md "Chapter_006 函数的参数")
+
+下一节 [Chapter_008 切片](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_008.md "Chapter_008 切片")
