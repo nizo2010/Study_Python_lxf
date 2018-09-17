@@ -1,4 +1,4 @@
-＃ Chapter_022   模块（Module）
+# Chapter_022   模块（Module）
 
 1、在Python中，一个 .py 文件就是一个模块（Module）。
 
