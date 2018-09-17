@@ -60,3 +60,10 @@ class Timer(object):
 4） Python的”file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。
 
 但是许多对象只要有read()方法，都被视为“file-like object”，不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。
+
+
+## 链接
+
+上一节 [Chapter_027 访问限制](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_027.md "Chapter_027 访问限制")
+
+下一节 [Chapter_029 获取对象信](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_029.md "Chapter_029 获取对象信")
