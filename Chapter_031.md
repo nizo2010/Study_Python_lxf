@@ -87,3 +87,11 @@ class HighSchoolStudent(Student):
 >>>h.score
 99
 ```
+
+
+## 链接
+
+上一节 [Chapter_030 实例属性和类属性](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_030.md "Chapter_030 实例属性和类属性")
+
+下一节 [Chapter_032 使用@property](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_032.md "Chapter_032 使用@property")
+
