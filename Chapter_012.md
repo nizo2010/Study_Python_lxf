@@ -43,3 +43,11 @@ Traceback (most recent call last):
 ...
 StopIteration
 ```
+
+
+## 链接
+
+上一节 [Chapter_011 生成器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_011.md "Chapter_011 生成器")
+
+下一节 [Chapter_013 函数式编程（Functional Programming）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_013.md "Chapter_013 函数式编程（Functional Programming）")
+
