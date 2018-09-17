@@ -266,3 +266,10 @@ Found mapping: password ==> <StringField:password>
 SQL: insert into User (password,email,username,id) values (?,?,?,?)
 ARGS: [123456, 'nizo', 'test@orm.org', 'mypassword@123']
 ```
+
+
+## 链接
+
+上一节 [Chapter_035 使用枚举类](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_035.md "Chapter_035 使用枚举类")
+
+下一节 [Chapter_037 错误处理](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_036.md "Chapter_037 错误处理")
