@@ -177,3 +177,10 @@ raise 语句，抛出异常
 1、 raise语句不带参数，就会将当前捕获到的错误原样抛出
 
 2、 raise语句带一个Error，就会抛出指定的Error错误
+
+
+## 链接
+
+上一节 [Chapter_036 使用元类](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_036.md "Chapter_036 使用元类")
+
+下一节 [Chapter_038 调试](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_038.md "Chapter_038 调试")
