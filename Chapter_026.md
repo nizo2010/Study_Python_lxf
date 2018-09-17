@@ -65,4 +65,4 @@ AttributeError: 'Student' object has no attribute 'age'
 
 上一节 [Chapter_025 面向对象编程OOP（Object Oriented Programming）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_025.md "Chapter_025 面向对象编程OOP（Object Oriented Programming）")
 
-下一节 [Chapter_026 类和实例](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_027.md "Chapter_027 访问限制")
+下一节 [Chapter_027 访问限制](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_027.md "Chapter_027 访问限制")
