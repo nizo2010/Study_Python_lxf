@@ -8,3 +8,10 @@
 
 
 3、Python对函数式编程提供部分支持，但不是纯函数式编程（因为Puyhon允许使用变量）。
+
+
+## 链接
+
+上一节 [Chapter_012 迭代器](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_011.md "Chapter_012 迭代器")
+
+下一节 [Chapter_014 高阶函数（High-order fuction）](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_014.md "Chapter_014 高阶函数（High-order fuction）")
