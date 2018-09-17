@@ -56,3 +56,10 @@ class Student(object):
 >>> bart.get_name()
 'Bart Simpson'
 ```
+
+
+## 链接
+
+上一节 [Chapter_026 类和实例](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_026.md "Chapter_026 类和实例")
+
+下一节 [Chapter_028 继承和多态](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_028.md "Chapter_028 继承和多态")
