@@ -81,17 +81,12 @@ UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 0: illegal mu
 JSON表示的对象是标准的JavaScript语言的对象，JSON和Python内置数据类型对应关系如下：
 
 | JSON类型 | Python类型 |
-
+| ------ | ------|
 | {} | dict |
-
 | [] | list |
-
 | "string" | str |
-
 | 1234.56 | int或float |
-
 | true/false | True/False |
-
 | null | None |
 
 
