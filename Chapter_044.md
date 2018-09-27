@@ -3,7 +3,7 @@
 程序运行过程中，所有变量都存放在内存中，比如一个dict：
 
 ```python
-d = dict(name = 'nizo', age =18, score = 100)
+d = dict(name = 'nizo', age = 18, score = 100)
 ```
 
 可以随时修改变量，比如讲name改成'Michael'，一旦程序结束，变量所占用的内存就被操作系统回收，如果没有把修改后的'Michael'存储到磁盘，下次运行程序，变量name又被初始化为'nizo'。
