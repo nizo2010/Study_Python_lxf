@@ -24,7 +24,7 @@ pickle.dumps()方法把任意对象序列化成一个bytes，然后可以将这�
 
 ```python
 >>> import pickle
->>> d = dict(name='nizo', age=18, score=100)
+>>> d = dict(name='nizo', age= 18, score=100)
 >>> pickle.dumps(d)
 b'\x80\x03}q\x00(X\x04\x00\x00\x00nameq\x01X\x04\x00\x00\x00nizoq\x02X\x03\x00\x00\x00ageq\x03K\x12X\x05\x00\x00\x00scoreq\x04Kdu.'
 >>> type(pickle.dumps(d))
@@ -81,11 +81,17 @@ UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 0: illegal mu
 JSON表示的对象是标准的JavaScript语言的对象，JSON和Python内置数据类型对应关系如下：
 
 | JSON类型 | Python类型 |
+
 | {} | dict |
+
 | [] | list |
+
 | "string" | str |
+
 | 1234.56 | int或float |
+
 | true/false | True/False |
+
 | null | None |
 
 
