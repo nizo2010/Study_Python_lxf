@@ -94,18 +94,18 @@ import os, time, random
 
 def long_time_task(name):
     print('Run task %s (%s)...' % (name, os.getpid()))
-    start = time.time()
-    time.sleep(random.random() * 3)
-    end = time.time()
+    start = time.time()                                                 # 子进程调用开始时间
+    time.sleep(random.random() * 3)                                     # 随机等待0~3秒
+    end = time.time()                                                   # 子进程调用结束时间
     print('Task %s runs %0.2f seconds.' % (name, (end - start)))
 
 if __name__=='__main__':
     print('Parent process %s.' % os.getpid())
-    p = Pool(4)
-    for i in range(5):
+    p = Pool(4)                                                         # 进程池里有4个进程，即最多同时执行4个进程
+    for i in range(5):                                                  # 5个任务
         p.apply_async(long_time_task, args=(i,))
     print('Waiting for all subprocesses done...')
-    p.close()
+    p.close()                                                           # join()调用前必须先调用close()，表示不能继续添加新的Process
     p.join()
     print('All subprocesses done.')
 
@@ -116,8 +116,8 @@ Run task 0 (7904)...
 Run task 1 (4232)...
 Run task 2 (10772)...
 Run task 3 (696)...
-Task 3 runs 0.14 seconds.
-Run task 4 (696)...
+Task 3 runs 0.14 seconds.                                 # Pool里有4个子进程，有5个任务
+Run task 4 (696)...                                       # 因此先执行4个任务，执行完一个任务后，才有进程能够执行第五个任务
 Task 4 runs 1.32 seconds.
 Task 1 runs 1.76 seconds.
 Task 0 runs 2.47 seconds.
