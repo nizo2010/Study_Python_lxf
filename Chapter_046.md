@@ -278,6 +278,76 @@ Get C from queue.
 在Unix/Linux下，multiprocessing模块封装了fork()调用，使我们不需要关注fork()的细节。由于Windows没有fork调用，因此，multiprocessing需要“模拟”出fork的效果，父进程所有Python对象都必须通过pickle序列化再传到子进程去，所有，如果multiprocessing在Windows下调用失败了，要先考虑是不是pickle失败了。
 
 
+## apply方法与apply_async方法
+
+### apply方法是阻塞的
+
+意思就是等待当前子进程执行完毕后，在执行下一个进程。
+
+例如：
+
+有三个进程0，1，2。等待子进程0执行完毕后，在执行子进程1，然后子进程2，最后回到主进程执行主进程剩余部分，就像上面的执行结果一样。
+
+这样好像跟单进程串行执行没什么区别了。
+
+### apply_async 是异步非阻塞的。
+
+意思就是：不用等待当前进程执行完毕，随时根据系统调度来进行进程切换。
+
+完全没有等待子进程执行完毕，主进程就已经执行完毕，并退出程序。
+
+为什么会这样呢？
+
+因为进程的切换是操作系统来控制的，抢占式的切换模式。
+
+我们首先运行的是主进程，cpu运行很快啊，这短短的几行代码，完全没有给操作系统进程切换的机会，主进程就运行完毕了，整个程序结束。子进程完全没有机会切换到程序就已经结束了。
+
+> apply是阻塞式的。
+>
+> 首先主进程开始运行，碰到子进程，操作系统切换到子进程，等待子进程运行结束后，在切换到另外一个子进程，直到所有子进程运行完毕。然后在切换到主进程，运行剩余的部分。
+>
+> apply_async是异步非阻塞式的。
+>
+> 首先主进程开始运行，碰到子进程后，主进程说：让我先运行个够，等到操作系统进行进程切换的时候，在交给子进程运行。以为我们的程序太短，然而还没等到操作系统进行进程切换，主进程就运行完毕了。
+
+```python
+from multiprocessing import Pool
+import os, time, random
+
+def long_time_task(name):
+    print('Run task %s (%s)...' % (name, os.getpid()))
+    start = time.time()                                                 
+    time.sleep(random.random() * 3)                                     
+    end = time.time()                                                   
+    print('Task %s runs %0.2f seconds.' % (name, (end - start)))
+
+if __name__=='__main__':
+    print('Parent process %s.' % os.getpid())
+    p = Pool(4)                                                         
+    for i in range(5):                                                  
+        p.apply(long_time_task, args=(i,))
+    print('Waiting for all subprocesses done...')
+    p.close()                                                           
+    p.join()
+    print('All subprocesses done.')
+
+### 运行结果
+Parent process 7976.
+Run task 0 (7208)...
+Task 0 runs 2.75 seconds.
+Run task 1 (8892)...
+Task 1 runs 1.48 seconds.
+Run task 2 (7664)...
+Task 2 runs 1.24 seconds.
+Run task 3 (7980)...
+Task 3 runs 0.23 seconds.
+Run task 4 (7208)...
+Task 4 runs 0.68 seconds.
+Waiting for all subprocesses done...
+All subprocesses done.
+```
+
+
 ## 链接
 
 上一节 [Chapter_045 进程和线程](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_045.md "Chapter_045 进程和线程")
