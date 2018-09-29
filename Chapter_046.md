@@ -152,18 +152,23 @@ subprocess模块可以让我们非常方便地启动一个子进程，然后控�
 import subprocess
 
 print('$ nslookup www.python.org')
+
 r = subprocess.call(['nslookup', 'www.python.org'])
+
 print('Exit code:', r)
+
+
 
 ###运行结果：
 $ nslookup www.python.org
-Server:        192.168.19.4
-Address:    192.168.19.4#53
+Server:  lg-ns2.huawei.com
+Address:  10.72.55.103
 
 Non-authoritative answer:
-www.python.org    canonical name = python.map.fastly.net.
-Name:    python.map.fastly.net
-Address: 199.27.79.223
+Name:    dualstack.python.map.fastly.net
+Addresses:  2a04:4e42:36::223
+          151.101.72.223
+Aliases:  www.python.org
 
 Exit code: 0
 ```
@@ -174,10 +179,15 @@ Exit code: 0
 import subprocess
 
 print('$ nslookup')
-p = subprocess.Popen(['nslookup'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+p = subprocess.Popen(['nslookup'], stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+
 output, err = p.communicate(b'set q=mx\npython.org\nexit\n')
+
 print(output.decode('utf-8'))
+
 print('Exit code:', p.returncode)
+
 ```
 
 上面的代码相当于在命令行执行命令nslookup，然后手动输入：
@@ -192,17 +202,25 @@ print('Exit code:', p.returncode)
 
 ```python
 $ nslookup
-Server:        192.168.19.4
-Address:    192.168.19.4#53
+Default Server:  lg-ns2.huawei.com
+Address:  10.72.55.103
 
-Non-authoritative answer:
-python.org    mail exchanger = 50 mail.python.org.
+> > Server:  lg-ns2.huawei.com
+Address:  10.72.55.103
 
-Authoritative answers can be found from:
-mail.python.org    internet address = 82.94.164.166
-mail.python.org    has AAAA address 2001:888:2000:d::a6
+python.org      MX preference = 50, mail exchanger = mail.python.org
 
-
+python.org      nameserver = ns4.p11.dynect.net
+python.org      nameserver = ns3.p11.dynect.net
+python.org      nameserver = ns1.p11.dynect.net
+python.org      nameserver = ns2.p11.dynect.net
+mail.python.org internet address = 188.166.95.178
+ns1.p11.dynect.net      internet address = 208.78.70.11
+ns2.p11.dynect.net      internet address = 204.13.250.11
+ns3.p11.dynect.net      internet address = 208.78.71.11
+ns4.p11.dynect.net      internet address = 204.13.251.11
+mail.python.org AAAA IPv6 address = 2a03:b0c0:2:d0::71:1
+>
 Exit code: 0
 ```
 
