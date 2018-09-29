@@ -325,10 +325,8 @@ if __name__=='__main__':
     print('Parent process %s.' % os.getpid())
     p = Pool(4)                                                         
     for i in range(5):                                                  
-        p.apply(long_time_task, args=(i,))
-    print('Waiting for all subprocesses done...')
-    p.close()                                                           
-    p.join()
+        p.apply(long_time_task, args=(i,))            # 这里使用apply()方法，阻塞式
+    print('Waiting for all subprocesses done...')     # 这里就不需要调用p.close()和p.join()了
     print('All subprocesses done.')
 
 ### 运行结果
