@@ -84,9 +84,17 @@ Hello, Bob (in Thread-B)
 ThreadLocal最常用的地方就是为每个线程绑定一个数据库连接，HTTP请求，用户身份信息等，这样一个线程的所有调用到的处理函数都可以非常方便地访问这些资源。
 
 
-## 链接
+## 参考
+
 [深入理解Python中的ThreadLocal变量（上）](http://python.jobbole.com/86150/ "深入理解Python中的ThreadLocal变量（上）")
 
 [深入理解Python中的ThreadLocal变量（中）](http://python.jobbole.com/86203/ "深入理解Python中的ThreadLocal变量（中）")
 
 [深入理解Python中的ThreadLocal变量（下）](http://python.jobbole.com/86753/ "深入理解Python中的ThreadLocal变量（下）")
+
+
+## 链接
+
+上一节 [Chapter_047 多线程](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_047.md "Chapter_047 多线程")
+
+下一节 [Chapter_049 进程 vs 线程](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_049.md "Chapter_049 进程 vs 线程")
