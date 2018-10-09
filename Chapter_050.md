@@ -1,0 +1,6 @@
+# Chapter_050 分布式进程
+
+在Thread和Process中，应当优选Process，因为Process更稳定，而且Process可以分布到多台机器上，而Thread最多只能分布在同一台机器的多个CPU上。
+
+Python的multiprocessing模块不但支持多进程，其中的managers子模块还支持把多进程分布到多台机器上。一个服务进程可以作为调度者，依靠网络通信将任务分布到其他多个进程中。由于managers子模块封装得很好，不必了解网络通信的细节，就可以很容易地编写分布式多进程程序。
+
