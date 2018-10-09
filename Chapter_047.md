@@ -270,6 +270,11 @@ if __name__ == '__main__':
     p.join()
 ```
 
+## 参考
+[搞定python多线程和多进程](http://www.cnblogs.com/whatisfantasy/p/6440585.html "搞定python多线程和多进程")
+
+[理解python中多线程](http://python.jobbole.com/86909/ "理解python中多线程")
+
 
 ## 链接
 
