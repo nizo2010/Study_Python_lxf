@@ -86,5 +86,7 @@ ThreadLocal最常用的地方就是为每个线程绑定一个数据库连接，
 
 ## 链接
 [深入理解Python中的ThreadLocal变量（上）](http://python.jobbole.com/86150/ "深入理解Python中的ThreadLocal变量（上）")
+
 [深入理解Python中的ThreadLocal变量（中）](http://python.jobbole.com/86203/ "深入理解Python中的ThreadLocal变量（中）")
+
 [深入理解Python中的ThreadLocal变量（下）](http://python.jobbole.com/86753/ "深入理解Python中的ThreadLocal变量（下）")
