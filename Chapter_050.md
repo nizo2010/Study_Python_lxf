@@ -316,3 +316,6 @@ Python的分布式进程接口简单，封装良好，适合需要把繁重任�
 
 ## 链接
 
+上一节 [Chapter_049 进程 vs 线程](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_049.md "Chapter_049 进程 vs 线程")
+
+下一节 [Chapter_051 正则表达式](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_051.md "Chapter_051 正则表达式")
