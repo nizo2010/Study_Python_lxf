@@ -224,9 +224,61 @@ else:
 
 ## 课后作业
 
-请尝试写一个验证Email地址的正则表达式。版本一应该可以验证出类似的Email：
+1、请尝试写一个验证Email地址的正则表达式。版本一应该可以验证出类似的Email：
 
 someone@gmail.com
 
 bill.gates@microsoft.com
 
+```python
+import re
+
+def is_valid_email(addr):
+	if re.match(r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+.(com$)', addr):
+		return True
+	else:
+		return False
+		
+if __name__ == '__main__':
+	assert is_valid_email('someone@gmail.com')
+	assert is_valid_email('bill.gates@microsoft.com')
+	assert not is_valid_email('bob#example.com')
+	assert not is_valid_email('mr-bob@example.com')
+	print('ok')
+
+
+### 运行结果
+ok
+
+```
+
+2、提取出带名字的Email地址：
+
+<Tom Paris>tom@voyager.org => Tom Paris
+bob@example.com => bob
+    
+```python
+import re
+
+def name_of_email(addr):
+    m=re.match(r'^(\<?)([a-zA-Z\s]+)(>?)([A-Za-z\s]{0,9})\@([A-Za-z0-9]+)(.com|.org)$',addr)
+    if m:
+        print(m.group(2))
+        return m.group(2)
+    else:
+        print('%s is not a email address.'%addr)
+        
+assert name_of_email('<Tom Paris> tom@voyager.org') == 'Tom Paris'
+assert name_of_email('bob@example.com') == 'bob'
+
+### 运行结果
+Tom Paris
+bob
+```
+
+
+## 链接
+
+上一节 [Chapter_050 分布式进程](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_050.md "Chapter_050 分布式进程")
+
+下一节 [Chapter_052 模块datetime](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_052.md "Chapter_052 模块datetime")
