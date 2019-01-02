@@ -138,10 +138,19 @@ class LastUpdatedOrderedDict(OrderedDict):
 
     def __init__(self, capacity):
         super(LastUpdatedOrderedDict, self).__init__()
+        #或者OrderedDict.__init__(self)
+        #由于重写了构造方法，所以父类的构造方法不能直接继承过来
+        #手动加一行：继承超(父)类构造方法
         self._capacity = capacity
 
     def __setitem__(self, key, value):
+         #如果key在dict中存在containsKey为1，不存在containsKey为0
         containsKey = 1 if key in self else 0
+        '''
+        如果当前元素不在dict中，此时dict的长度已经大于等于自身容量时需要将第一个元素删除
+        如果当前元素存在于dict中，此时dict的长度已经大于等于自身容量，但减去1就不满足该条件了
+        所以这种情况下会将原来存在的元素给覆盖掉而不是去删除第一个元素。
+        '''
         if len(self) - containsKey >= self._capacity:
             last = self.popitem(last=False)
             print('remove:', last)
