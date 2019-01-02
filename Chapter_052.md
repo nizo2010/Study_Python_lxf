@@ -1,4 +1,4 @@
-# Chapter_052 模块dtetime
+# Chapter_052 模块datetime
 
 datetime是Python处理*日期和时间*的标准库。
 
