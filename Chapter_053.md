@@ -1,4 +1,4 @@
-# Chapter_052 模块collections
+# Chapter_053 模块collections
 
 collections是Python内建的一个*集合模块*，提供了许多有用的集合类。
 
