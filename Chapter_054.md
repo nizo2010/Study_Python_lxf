@@ -138,6 +138,86 @@ Base64适用于小段内容的编码，比如数字证书签名、Cookie的内�
 
 因此，如果Base64编码后的字符串长度不是4的倍数，则需要在末尾添加多个"="将长度补齐为4的倍数，就可以正常解码了。
 
+
+## 课后练习
+
+请写一个能处理去掉"="的base64编码函数：
+
+```python
+# -*- coding: utf-8 -*-
+import base64
+def safe_base64_decode(s):
+    def get_decode_str(decodedata):
+        if isinstance(decodedata, bytes):
+            decodedata = decodedata.decode('utf-8')
+        return decodedata
+
+    def base64_decode(base64str):
+        base64_lostlength = (4 - len(base64str) % 4) % 4
+        base64str = str.ljust(base64str, len(base64str) + base64_lostlength, '=')
+        return base64.b64decode(base64str)
+
+    return base64_decode(get_decode_str(s))
+
+print("safe_base64_decode(b'YWJjZA=='):", safe_base64_decode('YWJjZA=='))
+print("safe_base64_decode(b'YWJjZA'):", safe_base64_decode('YWJjZA'))
+print('ok')
+
+#运行结果
+C:\ProgramData\Anaconda3\python.exe F:/Python/xiao_xiang_python/test.py
+safe_base64_decode(b'YWJjZA=='): b'abcd'
+safe_base64_decode(b'YWJjZA'): b'abcd'
+ok
+```
+
+## 其他
+
+### 本地图片
+
+```python
+def convert_local_image():
+    # 原始图片 ===> base64 编码
+    with open('/path/to/alpha.png', 'r') as fin:
+        image_data = fin.read()
+        base64_data = base64.b64encode(image_data)
+        
+        fout = open('/path/to/base64_content_alpha.txt', 'w')
+        fout.write(base64_data)
+        fout.close()
+        
+    # base64 编码 ===> 原始图片
+    with open(/path/to/base64_content_alpha.txt', 'r') as fin:
+        base64_date = fin.read()
+        ori_image_data = base64.b64decode(base64_data)
+        
+        fout = open('/path/to/beta.png', 'wb')
+        fout.write(ori_image_data)
+        fout.close()
+```
+
+
+### 网络图片
+
+```python
+import requests
+
+def convert_web_image():
+    url = 'https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png'
+    r = requests.get(url, stream = True)
+    if r.status_code == 200:
+        image_data = r.content
+        base64_data = base64.b64encode(image_data)
+        
+        # 将图片的 base64 编码保存到本地文件
+        with open('/path/to/base64_data.txt', 'w') as fout:
+            fout.write(base64_data)
+            
+        # 下载图片到本地
+        with open('/path/to/logo.png', 'wb') as fout:
+            fout.write(image_data)
+```
+
+
 ## 链接
 
 上一节 [Chapter_053 模块collections](https://github.com/nizo2010/Study_Python_lxf/blob/master/Chapter_053.md "Chapter_051 模块collections")
